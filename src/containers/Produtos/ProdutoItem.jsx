@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './ProdutoItem.scss';
 import { slugify } from '../../util/helpers';
+import noImage from '../../produto-noimage.png';
+import './ProdutoItem.scss';
+
 
 const ProdutoItemList = ({ produto }) => (
   <div className="produto-item">
     <Link to={slugify(produto.name)} className="produto-item__image">
-      <img src={produto.image} alt={produto.name} />
+
+      <img src={produto.image ? produto.image : noImage} alt={produto.name} />
+
       {produto.on_sale && <span className="produto-item__percent-discount">-{produto.discount_percentage}</span>}
     </Link>
 
@@ -16,8 +20,20 @@ const ProdutoItemList = ({ produto }) => (
       </div>
 
       <div className="produto-item__price">
-        <span className="produto-item__price--dashed">{produto.regular_price}</span>
-        <strong className="produto-item__price-discount">{produto.actual_price}</strong>
+        {produto.on_sale ?
+          (
+            <>
+              <span className="produto-item__price--dashed">
+                {produto.regular_price}
+              </span>
+              <strong>{produto.actual_price}</strong>
+            </>
+          ) :
+          <strong className="produto-item__price">
+            {produto.regular_price}
+          </strong>
+        }
+
       </div>
 
     </div>

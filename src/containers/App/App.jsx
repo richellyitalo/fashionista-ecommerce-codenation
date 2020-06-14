@@ -2,15 +2,18 @@ import React from 'react';
 import './App.scss';
 import { BrowserRouter } from 'react-router-dom';
 import Routes from '../../routes';
+import { Header } from '../';
 
 function App () {
   return (
     <div className="app">
-      <div className="app__container">
-        <BrowserRouter>
+      <BrowserRouter>
+        <Header />
+
+        <div className="app__container">
           <Routes />
-        </BrowserRouter>
-      </div>
+        </div>
+      </BrowserRouter>
     </div>
   );
 }

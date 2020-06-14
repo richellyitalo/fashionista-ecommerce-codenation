@@ -3,19 +3,16 @@
   width: 24%;
   flex-direction: column;
   overflow: hidden;
-  margin-bottom: 30px;
   position: relative;
   background-color: white;
   transition: all 0.1s ease 0s;
   -webkit-transition: all 0.1s ease;
   padding: 5px 5px 10px;
+  border: 1px solid #fafafa;
+  margin: 0 0.5% 30px;
 
   @media (max-width: 700px) {
-      width: 32%;
-  }
-
-  @media (max-width: 700px) {
-      width: 50%;
+      width: 49%;
   }
   @media (max-width: 500px) {
       width: 100%;
@@ -26,7 +23,7 @@
   }
 
   &__image {
-    padding: 10px;
+    padding: 0px;
 
     & img {
       width: 100%;
@@ -35,7 +32,7 @@
 
     & .produto-item__percent-discount {
       position: absolute;
-      top: 0;
+      top: 10%;
       right: 0;
       color: #ebb829;
       border-radius: 3px 0 0 3px;

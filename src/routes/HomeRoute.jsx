@@ -12,7 +12,7 @@ const HomeRoute = () => {
     };
 
     loadProdutos();
-  });
+  }, []);
 
   return produtos.length && <ProdutosList produtos={produtos} />
 };

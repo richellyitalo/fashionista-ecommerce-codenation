@@ -1,7 +1,12 @@
+.produtos-list__info {
+  color: #777;
+  margin-bottom: 20px;
+}
+
 .produtos-list {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 0;
 }
