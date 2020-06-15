@@ -1,0 +1,22 @@
+.search {
+  width: 100%;
+}
+
+.search__content {
+  padding: 10px;
+}
+
+.search__input {
+  width: 100%;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  height: 25px;
+  padding: 5px;
+  font-weight: bold;
+  color: #777;
+}
+
+.search__not-found-text {
+  margin-top: 10px;
+  color: #999;
+}

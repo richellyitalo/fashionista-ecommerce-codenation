@@ -13,11 +13,11 @@ export default (state = INITIAL_STATE, action) => {
     case PRODUTO_SET_PRODUTOS:
       return { ...state, produtos: payload };
     case PRODUTO_SET_DETAIL:
-      console.log(state.produtos);
       const produto = state.produtos.filter(
         (produto) =>
           `${slugify(produto.name)}_${produto.code_color}` === payload
       );
+      console.log(produto);
       return { ...state, produtoDetail: produto[0] };
     default:
       return state;

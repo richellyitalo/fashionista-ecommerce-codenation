@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { clearOverlay } from '../store/actions';
+import { isEmpty } from '../util/helpers';
 import { setProdutoDetail } from '../store/actions'
 import { ProdutoDetail } from '../containers';
 
@@ -10,9 +12,10 @@ const ProdutoRoute = () => {
   const { produto: { produtoDetail } } = useSelector(state => state);
 
   useEffect(() => {
-    dispatch(setProdutoDetail(slug))
+    dispatch(setProdutoDetail(slug));
+    dispatch(clearOverlay());
   }, [dispatch, slug]);
-  return produtoDetail && <ProdutoDetail produto={produtoDetail}/>
+  return !isEmpty(produtoDetail) && <ProdutoDetail produto={produtoDetail}/>
 };
 
 export default ProdutoRoute;

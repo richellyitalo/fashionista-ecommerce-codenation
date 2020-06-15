@@ -1,7 +1,7 @@
 import { APP_CLEAR_OVERLAY, APP_SET_OVERLAY } from '../types';
 
 const INITIAL_STATE = {
-  overlay: null,
+  overlay: 'search',
 };
 
 export default (state = INITIAL_STATE, action) => {

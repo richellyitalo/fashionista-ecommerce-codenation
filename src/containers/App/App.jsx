@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react'
-import { Provider } from 'react-redux'
+import { Provider, useSelector } from 'react-redux'
+import Overlay from '../Overlay/Overlay';
 import Routes from '../../routes';
 import { Header } from '../';
 import api from '../../services/api';
@@ -10,6 +11,8 @@ import { setProdutos } from '../../store/actions';
 import './App.scss';
 
 function App () {
+  const { app: {overlay} } = useSelector(state => state);
+
   useEffect(() => {
     const loadProdutos = async () => {
       const res = await api.get('/catalog');
@@ -20,20 +23,24 @@ function App () {
   }, []);
 
   return (
-    <Provider store={store}>
-      <PersistGate persistor={persistor}>
-        <div className="app">
-          <BrowserRouter>
-            <Header />
-
-            <div className="app__container">
-              <Routes />
-            </div>
-          </BrowserRouter>
+    <div className={`app ${overlay!== null ? 'app--overlayed' : ''}`}>
+      <BrowserRouter>
+        <Header />
+        <div className="app__container">
+          <Routes />
         </div>
-      </PersistGate>
-    </Provider>
+        {overlay && <Overlay type={overlay} />}
+      </BrowserRouter>
+    </div>
   );
 }
 
-export default App;
+const ProviderApp = () => (
+  <Provider store={store}>
+    <PersistGate persistor={persistor}>
+      <App />
+    </PersistGate>
+  </Provider>
+)
+
+export default ProviderApp;

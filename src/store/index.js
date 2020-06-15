@@ -10,7 +10,7 @@ const rootReducer = (state, action) => {
 const persistConfig = {
   key: 'fashionista',
   storage,
-  // blacklist: ['content'],
+  blacklist: ['app'],
   // whitelist: ['auth'],
 };
 

@@ -1,0 +1,33 @@
+.produto {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  color: #333;
+}
+
+.produto__image {
+  width: 30%;
+
+  & img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.produto__info {
+  width: 40%;
+  padding: 0 10px;
+  font-size: .8em;
+}
+
+.produto__price {
+  width: 30%;
+  text-align: right;
+}
+
+.produto__installments {
+  color: #aaa;
+}
