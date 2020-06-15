@@ -1,28 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { setProdutoDetail } from '../store/actions'
 import { ProdutoDetail } from '../containers';
-import { slugify } from '../util/helpers';
-import api from '../services/api';
 
 const ProdutoRoute = () => {
+  const dispatch = useDispatch();
   const { slug } = useParams();
-  const [produto, setProduto] = useState(null);
+  const { produto: { produtoDetail } } = useSelector(state => state);
 
   useEffect(() => {
-    const loadProduto = async () =>  {
-      const res = await api.get('/catalog');
-      const produto = res.data.find(produto => slugify(produto.name) === slug)
-      if (!produto) {
-        alert('Produto inexistente!');
-        return;
-      }
-
-      setProduto(produto);
-    };
-
-    loadProduto();
-  }, [slug]);
-  return produto && <ProdutoDetail produto={produto}/>
+    dispatch(setProdutoDetail(slug))
+  }, [dispatch, slug]);
+  return produtoDetail && <ProdutoDetail produto={produtoDetail}/>
 };
 
 export default ProdutoRoute;

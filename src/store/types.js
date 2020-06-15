@@ -1,6 +1,6 @@
-// main
-export const MAIN_SET_OVERLAY = '@main/SET_OVERLAY';
-export const MAIN_CLEAR_OVERLAY = '@main/CLEAR_OVERLAY';
+// app
+export const APP_SET_OVERLAY = '@app/SET_OVERLAY';
+export const APP_CLEAR_OVERLAY = '@app/CLEAR_OVERLAY';
 
 // produtos
 export const PRODUTO_SET_PRODUTOS = '@produto/SET_PRODUTOS';

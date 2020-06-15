@@ -7,7 +7,7 @@ import { Img } from '../../components';
 
 
 const ProdutoItemList = ({ produto }) => (
-  <Link to={`produto/${slugify(produto.name)}`} className="produto-item">
+  <Link to={`produto/${slugify(produto.name)}_${produto.code_color}`} className="produto-item">
     <div className="produto-item__image">
       <Img src={produto.image ? produto.image : noImage} alt={produto.name} />
 
