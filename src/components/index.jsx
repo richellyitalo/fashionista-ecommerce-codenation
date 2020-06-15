@@ -1,5 +1,5 @@
-import ProdutoItemList from '../containers/Produtos/ProdutoItem';
+import Img from './Img/Img';
 
 export {
-  ProdutoItemList
+  Img
 }
