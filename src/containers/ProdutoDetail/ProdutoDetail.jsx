@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../store/actions';
 import { Img } from '../../components';
 import './ProdutoDetail.scss';
 
@@ -6,6 +8,7 @@ const ProdutoDetail = ({ produto }) => {
   const [sizeSelected, setSizeSelected] = useState(null);
   const [error, setError] = useState('');
   const sizesAvailable = produto.sizes.filter(size => !!size.available);
+  const dispatch = useDispatch();
 
   const handleSetsize = (size) => {
     setSizeSelected(size);
@@ -17,8 +20,7 @@ const ProdutoDetail = ({ produto }) => {
       return;
     }
 
-    setError('');
-    alert('REDUX: enviar para sacola! ')
+    dispatch(addToCart(produto, sizeSelected));
   }
 
   return (

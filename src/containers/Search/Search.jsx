@@ -15,7 +15,6 @@ const Search = () => {
   };
 
   const searchProdutos = term => {
-    console.log(term.length);
     if (term.length < 3) {
       setProdutosFound([]);
       return;

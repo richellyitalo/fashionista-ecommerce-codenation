@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { FiSearch } from 'react-icons/fi';
 import { BsBagFill } from 'react-icons/bs';
 import { setOverlay } from '../../store/actions';
@@ -9,6 +9,7 @@ import './Header.scss';
 
 const Header = () => {
   const dispatch = useDispatch();
+  const { total } = useSelector(state => state.cart);
 
   const handleSearchClick = () => {
     dispatch(setOverlay('search'));
@@ -37,7 +38,7 @@ const Header = () => {
               onClick={handleCartClick}
             >
               <BsBagFill size="1.2em" />
-              <span className="header__bag-num-items">13</span>
+              {total > 0 && <span className="header__bag-num-items">{total}</span>}
             </button>
           </div>
         </nav>

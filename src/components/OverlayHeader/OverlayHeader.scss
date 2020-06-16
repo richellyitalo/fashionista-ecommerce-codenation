@@ -1,3 +1,12 @@
+.overlay {
+  display: block;
+  overflow: hidden;
+}
+
+.overlay-header {
+  overflow: hidden;
+}
+
 .overlay-header__close {
   height: 40px;
   line-height: 40px;

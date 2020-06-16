@@ -1,0 +1,29 @@
+.cart {
+  width: 100%;
+}
+
+.cart__content {
+  padding: 10px;
+}
+
+.cart__not-found-text {
+  margin-top: 10px;
+  color: #999;
+}
+
+.produto__remove-item {
+  color: tomato;
+  border: none;
+  background-color: transparent;
+  margin-top: 5px;
+  font-size: .9em;
+  padding: 0;
+  cursor: pointer;
+}
+
+.cart__total {
+  border-top: 1px solid #aaa;
+  padding: 5px;
+  background-color: #aaa;
+  font-weight: bold;
+}

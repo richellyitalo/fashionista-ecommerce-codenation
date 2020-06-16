@@ -17,7 +17,6 @@ export default (state = INITIAL_STATE, action) => {
         (produto) =>
           `${slugify(produto.name)}_${produto.code_color}` === payload
       );
-      console.log(produto);
       return { ...state, produtoDetail: produto[0] };
     default:
       return state;

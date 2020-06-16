@@ -32,22 +32,6 @@
   color: #aaa;
 }
 
-.produto__quantity-handle {
-  margin-top: 15px;
-}
-
-.produto__quantity-value {
-  margin: 0 10px;
-  font-weight: bold;
-}
-
-.produto__button-quantity {
-  border: 1px solid #333;
-  border-radius: 2px;
-  background-color: #ddd;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #ccc;
-  }
+.produto__size {
+  color: #999;
 }
