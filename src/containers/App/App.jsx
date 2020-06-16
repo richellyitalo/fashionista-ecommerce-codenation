@@ -9,6 +9,7 @@ import api from '../../services/api';
 import { store, persistor } from '../../store';
 import { setProdutos } from '../../store/actions';
 import './App.scss';
+import Footer from '../../components/Footer/Footer';
 
 function App () {
   const { app: {overlay} } = useSelector(state => state);
@@ -29,6 +30,7 @@ function App () {
         <div className="app__container">
           <Routes />
         </div>
+        <Footer />
         {overlay && <Overlay type={overlay} />}
       </BrowserRouter>
     </div>
