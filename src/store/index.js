@@ -11,7 +11,7 @@ const persistConfig = {
   key: 'fashionista',
   storage,
   blacklist: ['app'],
-  // whitelist: ['auth'],
+  whitelist: ['cart'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
