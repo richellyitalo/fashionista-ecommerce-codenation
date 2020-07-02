@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../../store/actions';
+import { addToCart, setOverlay } from '../../store/actions';
 import { Img } from '../../components';
+import { toast } from 'react-toastify';
 import './ProdutoDetail.scss';
 
 const ProdutoDetail = ({ produto }) => {
@@ -21,6 +22,14 @@ const ProdutoDetail = ({ produto }) => {
     }
 
     dispatch(addToCart(produto, sizeSelected));
+    dispatch(setOverlay('cart'));
+    toast.info('Produto adicionado ao carrinho', {
+      position: "bottom-center",
+      autoClose: 4000,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      });
   }
 
   return (
